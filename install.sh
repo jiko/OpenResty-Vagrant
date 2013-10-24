@@ -1,6 +1,5 @@
 #!/bin/bash
 # HT github.com/benagricola/ngx-openresty-build
-# run as root
 
 # creating openresty group if he isn't already there
 if ! getent group openresty >/dev/null; then
@@ -20,8 +19,9 @@ if ! getent passwd openresty >/dev/null; then
       openresty  >/dev/null
 fi
 
-mkdir /var/cache/openresty
-cp etc-initd-openresty.sh /etc/init.d/openresty.sh
+mkdir /var/cache/openresty || true
+cp init.d /etc/init.d/openresty || true
+chmod +x /etc/init.d/openresty || true
 
 VERSION=${1:-"1.4.2.9"}
 PKG=ngx_openresty-$VERSION
