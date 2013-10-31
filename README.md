@@ -7,4 +7,8 @@ I'm new to Vagrant, and could not get provisioning through the Vagrantfile to wo
     cd /vagrant
     sudo ./install.sh
 
+If you want a pre-packaged box built with the previous steps, do:
+
+    vagrant box add debian7-openresty https://dl.dropboxusercontent.com/s/odnew2tnliqft9o/debian7-openresty.box
+
 Next step: [Getting Started with OpenResty](http://openresty.org/#GettingStarted)
