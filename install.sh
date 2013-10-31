@@ -22,7 +22,7 @@ fi
 # these commands threw errors when I tried adding this script as a Vagrant provisioner
 # `2> /dev/null` may be more appropriate here than `|| true`
 mkdir /var/cache/openresty || true
-cp init.d /etc/init.d/openresty || true
+cp initd /etc/init.d/openresty || true
 chmod +x /etc/init.d/openresty || true
 
 VERSION=${1:-"1.4.2.9"}
