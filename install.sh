@@ -41,7 +41,9 @@ wget http://openresty.org/download/${PKG}.tar.gz
 
 tar xzvf ${PKG}.tar.gz
 cd $PKG
-./configure --prefix=/srv/openresty/ \
+
+# besides the prefix, these paths aren't OpenResty defaults but they follow Linux conventions
+./configure --prefix=/usr/local/openresty/ \
     --with-luajit \
     --sbin-path=/usr/sbin/openresty \
     --conf-path=/etc/openresty/openresty.conf \
