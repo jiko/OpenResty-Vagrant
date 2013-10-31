@@ -39,7 +39,7 @@ wget http://openresty.org/download/${PKG}.tar.gz
 #gpg --fingerprint A0E98066
 #gpg --verify ${PKG}.tar.gz.asc ${PKG}.tar.gz
 
-tar xzvf ${PKG}.tar.gz
+tar xzf ${PKG}.tar.gz
 cd $PKG
 
 # besides the prefix, these paths aren't OpenResty defaults but they follow Linux conventions
