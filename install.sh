@@ -19,12 +19,16 @@ if ! getent passwd openresty >/dev/null; then
       openresty  >/dev/null
 fi
 
+# these commands threw errors when I tried adding this script as a Vagrant provisioner
+# `2> /dev/null` may be more appropriate here than `|| true`
 mkdir /var/cache/openresty || true
 cp init.d /etc/init.d/openresty || true
 chmod +x /etc/init.d/openresty || true
 
 VERSION=${1:-"1.4.2.9"}
 PKG=ngx_openresty-$VERSION
+
+# see http://openresty.org/#Installation
 
 apt-get install -y libpcre3-dev build-essential libssl-dev sudo libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make
 
@@ -37,7 +41,8 @@ wget http://openresty.org/download/${PKG}.tar.gz
 
 tar xzvf ${PKG}.tar.gz
 cd $PKG
-./configure --with-luajit --prefix=/etc/openresty/ \
+./configure --prefix=/srv/openresty/ \
+    --with-luajit \
     --sbin-path=/usr/sbin/openresty \
     --conf-path=/etc/openresty/openresty.conf \
     --error-log-path=/var/log/openresty/error.log \
