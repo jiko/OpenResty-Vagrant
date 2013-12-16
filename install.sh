@@ -25,7 +25,7 @@ mkdir /var/cache/openresty || true
 cp initd /etc/init.d/openresty || true
 chmod +x /etc/init.d/openresty || true
 
-VERSION=${1:-"1.4.3.7"}
+VERSION=${1:-"1.4.3.9"}
 PKG=ngx_openresty-$VERSION
 
 # see http://openresty.org/#Installation
