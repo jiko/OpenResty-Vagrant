@@ -4,6 +4,6 @@
 
 If you want a pre-packaged box built from this repository, do:
 
-    vagrant box add debian7-openresty https://www.dropbox.com/s/odnew2tnliqft9o/debian7-openresty.box
+    vagrant box add debian7-openresty https://github.com/jiko/OpenResty-Vagrant/releases/download/1.5.8.1/debian7-openresty.box
 
 Next step: [Getting Started with OpenResty](http://openresty.org/#GettingStarted)
